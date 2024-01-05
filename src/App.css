@@ -1,0 +1,309 @@
+html,
+body {
+  margin: 0px;
+  /*去外距*/
+  height: 100%;
+  /*自動填滿瀏覽器高度*/
+}
+
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+li a {
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.myimg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /* 將圖片固定在父層的大小 */
+  width: 100%;
+  height: 100%;
+  /* 高和寬都填滿容器 */
+  object-fit: cover;
+  /* 和background-image設定background-size: cover一樣，圖片剛好填滿 */
+  object-position: center;
+  opacity: 0;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* animate */
+
+.testActive {
+  animation: test 1s ease-in forwards;
+}
+
+.testClose {
+  animation: testBack 1s ease-in reverse both;
+}
+
+@keyframes test {
+  from {
+    background-color: #f00;
+    transform: translateX(0px);
+  }
+
+  to {
+    background-color: #fa0;
+    transform: translateX(100px);
+  }
+}
+
+@keyframes testBack {
+  from {
+    background-color: #f00;
+    transform: translateX(0px);
+  }
+
+  to {
+    background-color: #fa0;
+    transform: translateX(100px);
+  }
+}
+
+.navActive {
+  animation: navAnimate 1s ease-in forwards;
+}
+
+.navClose {
+  animation: navAnimateBack 1s ease-in reverse both;
+}
+
+@keyframes navAnimate {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(150px);
+  }
+}
+
+@keyframes navAnimateBack {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(150px);
+  }
+}
+
+/* animate END */
+
+/* hover */
+.photo-txt:hover {
+  background: radial-gradient(transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.shape-ex3:hover {
+  transition: all .3s linear;
+  color: #6ECEDA;
+}
+
+.shape-ex2:hover {
+  transition: all .8s linear;
+  color: #111;
+}
+
+.opacity-change:hover .myimg {
+  transition: all .8s linear;
+  opacity: 0.8;
+  transform: scale(1.2, 1.2);
+}
+
+/* hover END */
+
+
+/* tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptextBottom {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptextBottom {
+  visibility: visible;
+}
+
+.tooltip .tooltiptextRight {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptextRight {
+  visibility: visible;
+}
+
+.tooltip .tooltiptextLeft {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+}
+
+.tooltip:hover .tooltiptextLeft {
+  visibility: visible;
+}
+
+.tooltip .tooltiptextTop {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptextTop {
+  visibility: visible;
+}
+
+/* tooltip END */
+
+.input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #555555;
+  line-height: 24px;
+  width: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #f2f1f6;
+}
+
+.button {
+  background-color: #ffffff;
+  font-size: 18px;
+  border-radius: 24px;
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid #333333;
+  bottom: 10px;
+  position: 'absolute';
+  cursor: pointer;
+  text-align: center;
+}
+
+.myTestContent {
+  display: flex;
+  background-color: #282c34;
+  /* 採用 flex 排版 */
+  min-height: 100vh;
+  padding: 10px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+th {
+  background-color: #f19465;
+  width: 25vw;
+  height: 100px;
+}
+
+td {
+  background-color: #A2B59F;
+  width: 25vw;
+  height: 100px;
+  text-align: center;
+  color: #111;
+  border-radius: 50px;
+}
+
+/* 偶數:even, 奇數:odd */
+tr:nth-of-type(even) td {
+  background-color: lightgray;
+}
+
+tr:hover td {
+  transition: all .3s linear;
+  background-color: #282c34;
+  color: white;
+}
